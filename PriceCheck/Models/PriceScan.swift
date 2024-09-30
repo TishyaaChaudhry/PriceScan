@@ -30,6 +30,10 @@ struct PriceScan: Identifiable, Codable, Comparable {
     lhs.item < rhs.item
   }
   
+  func formattedPrice() -> String {
+          return Helper.asCurrency(price)
+      }
+  
   // MARK: Example for SwiftUI
   static let example = PriceScan(id: UUID(), item: "Charmin Soft 12 Mega Rolls", date: "2020-10-10T16:48:00", price: 14.79)
 
